@@ -7,18 +7,11 @@
 
 .terminal {
 	margin 0 auto
+	width 860px
 	display flex
-
-	&__title {
-		font-size 16px
-		margin-bottom 22px
-		font-size 18px
-		color #333
-	}
-
+	justify-content center
 
 	&__form {
-		display block
 		background #fff
 		padding 20px
 		box-shadow 0 1px 5px -1px rgba(0,0,0,.3)
@@ -32,11 +25,19 @@
 
 		}
 
-		&_success ^[0]__popup {
+		&_success ^[0]__popup
+		&_del-db ^[0]__popup-danger {
 			opacity 1
 			visibility visible
 			faster()
 		}
+	}
+
+	&__title {
+		font-size 16px
+		margin-bottom 22px
+		font-size 18px
+		color #333
 	}
 
 	&__field-box {
@@ -58,19 +59,12 @@
 		&:not(:last-child) {
 			margin-bottom 20px
 		}
-
-		&_disable {
-			background darken(#fff,5)
-			faster()
-		}
 	}
 
 	&__button {
-		box-sizing border-box
 		font-size 16px
 		height 30px
 		width 200px
-		padding 0 10px
 		background #fff
 		border 1px solid $borderColor
 		outline none
@@ -85,23 +79,7 @@
 		}
 	}
 
-	&__popup {
-		position absolute
-		top 0
-		left 0
-		width 100%
-		height 100%
-		background rgba(255,255,255,.8)
-		display flex
-		justify-content center
-		align-items center
-		font-size 20px
-		opacity 0
-		visibility hidden
-		transition opacity $duration, visibility $duration
-	}
-
-	&__form_search {
+	&__form_control {
 		display flex
 	}
 
@@ -109,13 +87,13 @@
 		margin-right 10px
 	}
 
-	&__result-block {
+	&__control-block {
 		box-sizing border-box
 		width 300px
 		border 1px solid $borderColor
 	}
 
-	&__result-title {
+	&__control-title {
 		height 30px
 		border-bottom 1px solid $borderColor
 		background darken(#fff,3)
@@ -124,7 +102,7 @@
 		justify-content flex-end
 	}
 
-	&__result-control {
+	&__control-button {
 		line-height 30px
 		width 40px
 		height 30px
@@ -142,7 +120,31 @@
 		}
 	}
 
-	&__result-clear {
+	&__del {
+		width 60px
+
+		&:not(&_disable) {
+			&:hover {
+				background rgba(255,0,0,.3);
+			}
+		}
+
+		&_disable {
+			color $borderColor
+			cursor default
+
+			&:hover {
+				color $borderColor
+				background none
+			}
+		}
+	}
+
+	&__show {
+		margin-left auto
+	}
+
+	&__clear {
 		position relative
 
 		&::before
@@ -174,31 +176,64 @@
 		}
 	}
 
-	&__del-db {
-		margin-right auto
-
-		&:hover {
-			background rgba(255,0,0,.3);
-		}
-	}
-
-	&__result-content {
-		padding 10px
+	&__control-content {
+		padding 0 10px
 		max-height 170px
 		overflow scroll
 	}
 
-	&__result-item {
+	&__control-item {
 		border-bottom 1px solid $borderColor
-		padding-bottom 3px
+		padding 5px 0 3px
+		cursor pointer
+		transition color $duration
+
+		&:hover {
+			color $borderColor
+			faster()
+		}
+
+		&_selected {
+			color $borderColor
+			faster()
+		}
 
 		&:not(:last-child) {
-			margin-bottom 10px
-
+			//margin-bottom 10px
 		}
 	}
-}
 
-.field-error {
-	border-color red
+	&__popup-button {
+		width auto
+		min-width 100px
+
+		&_del:hover {
+			background rgba(249,173,173,1)
+		}
+	}
+
+	&__popup {
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		background rgba(255,255,255,.8)
+		display flex
+		justify-content center
+		align-items center
+		font-size 20px
+		opacity 0
+		visibility hidden
+		transition opacity $duration, visibility $duration
+	}
+
+	&__popup-del-title {
+		margin-bottom 10px
+	}
+
+	&__popup-danger {
+		@extend .terminal__popup
+			flex-direction column
+		}
 }

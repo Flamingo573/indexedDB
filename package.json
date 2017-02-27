@@ -1,0 +1,31 @@
+{
+  "name": "indexeddb",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flamingo573/indexedDB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flamingo573/indexedDB/issues"
+  },
+  "homepage": "https://github.com/Flamingo573/indexedDB#readme",
+  "devDependencies": {
+    "babel-plugin-import-glob": "^1.0.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^2.0.1"
+  }
+}

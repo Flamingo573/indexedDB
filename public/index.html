@@ -5,7 +5,7 @@
 	<title>Test</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 
@@ -14,44 +14,49 @@
 				<div class="terminal">
 
 					<div class="terminal__form terminal__form-add-client">
-						<div class="terminal__form-title terminal__title">Add Client</div>
+						<div class="terminal__title">Add Client</div>
 						<div class="terminal__field-box">
 							<input class="terminal__time terminal__field" type="text" name="time" placeholder="Time">
 							<input class="terminal__name terminal__field" type="text" name="name" placeholder="Name">
 							<input class="terminal__table terminal__field" type="text" name="table" placeholder="Table">
 						</div>
-						<div class="terminal__control-box">
 							<button class="terminal__button">Add</button>
-						</div>
 						<div class="terminal__popup"></div>
 					</div>
 
-					<div class="terminal__form terminal__form_search">
-						<div class="terminal__search-block">
-							<div class="terminal__form-title terminal__title">Search Client</div>
+					<div class="terminal__form terminal__form_control">
+							<div class="terminal__search-block">
+							<div class="terminal__title">Control Client</div>
 							<div class="terminal__field-box">
 								<input class="terminal__time terminal__field" type="text" name="time" placeholder="Time">
 								<input class="terminal__name terminal__field" type="text" name="name" placeholder="Name">
 								<input class="terminal__table terminal__field" type="text" name="table" placeholder="Table">
 							</div>
-							<div class="terminal__control-box">
 								<button class="terminal__button">Find</button>
-							</div>
 						</div>
-						<div class="terminal__result-block">
-							<div class="terminal__result-title">
-								<div class="terminal__del-db terminal__result-control">Del</div>
-								<div class="terminal__result-show terminal__result-control">All</div>
-								<div class="terminal__result-clear terminal__result-control"></div>
+						<div class="terminal__control-block">
+							<div class="terminal__control-title">
+								<div class="terminal__del terminal__del_db terminal__control-button">Del DB</div>
+								<div class="terminal__del terminal__del_item terminal__del_disable terminal__control-button">Del Item</div>
+								<div class="terminal__show terminal__control-button">All</div>
+								<div class="terminal__clear terminal__control-button"></div>
 							</div>
-							<div class="terminal__result-content"></div>
+							<div class="terminal__control-content"></div>
 						</div>
 						<div class="terminal__popup"></div>
+						<div class="terminal__popup-danger">
+							<div class="terminal__popup-del-title"></div>
+							<div class="terminal__popup-box-button">
+								<button class="terminal__popup-button terminal__button">No</button>
+								<button class="terminal__popup-button terminal__popup-button_del terminal__button">Yes</button>
+							</div>
+						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
 
-		<script src="indexedDB.js"></script>
+		<script src="js/indexedDB.js"></script>
 	</body>
 </html>
